@@ -1,7 +1,7 @@
 // import the data.js file
 const tableData = data;
 var tbody = d3.select("tbody");
-filters = {}
+var filters = {}
 
 function buildTable(data) {
     tbody.html("");  // clear the data from the table for the new freshly filtered results
@@ -23,19 +23,17 @@ function filterTable(){
     let filteredData = tableData;
 
     // loop through all of the filters and keep any data that matches the filters
-    Object.entries(filters).forEach(function([key,value]){
-        filteredData = filteredData.filter((row) => row[key]===value);
+    Object.entries(filters).forEach(function([key, value]){
+        filteredData = filteredData.filter((row) => row[key] === value);
 
-    });
-    let date = d3.select("#datetime").property("value");
-    
+    });  
 
     // build the table from the filtered Data
     buildTable(filteredData);
 }
 
-function updatefilters() {
-    let changeElement = d3.select(this).select("input");
+function updateFilters() {
+    let changeElement = d3.select(this);
     let elementValue = changeElement.property("value");
     let filterId = changeElement.attr("id");
 
@@ -53,7 +51,15 @@ function updatefilters() {
 
 
 // event code attached to the filter button
-d3.selectAll("#filter-btn").on("change", updatefilters);
+
+// Module
+d3.selectAll("#filter-btn").on("click", updateFilters);
+
+// Gifted Waffles
+// d3.selectAll(".filter").on("change", updateFilters);
+
+// Cobmination of them
+d3.selectAll("#filter-btn").on("change", updateFilters);
 
 // initial load of the data on the webpage
 buildTable(tableData);
