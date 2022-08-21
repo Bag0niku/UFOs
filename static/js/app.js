@@ -5,7 +5,7 @@ const UFO = data
 function buildTable(tableData) {
     // clear out any existing data in the table and append refreshed data
     let tbody = d3.select("tbody");
-    tbody.html("")
+    tbody.html("");
 
     // loop throu each sighting making it a row
     tableData.forEach(row => {
@@ -16,5 +16,14 @@ function buildTable(tableData) {
     });
 }
 
+function handleClick() {
+    let filteredData = UFO;
+    let date = d3.select("#datetime").property("value");
+    
+    if(date) { filteredData = filteredData.filter(row => row.datetime === date) }
+    buildTable(filteredData)
 
+}
+
+d3.select("#filter-btn").on("click", handleClick)
 buildTable(UFO);
