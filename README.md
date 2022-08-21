@@ -10,7 +10,8 @@ This project is less about analysis and more about visualizing the information o
 
 
 ## Functionality
-Using the website available in this repository, search for UFO sightings that were documented the first two weeks of 2010 in North America. You can search the table by date, city, state, country, and shape of the sightings.
+ - Using the website available in this repository, search for UFO sightings that were documented the first two weeks of 2010 in North America. You can search the table by date, city, state, country, and shape of the sightings.
+- When entering your search criteria, please use all lowercase letters and ensure your date format is M/D/YYYY. Note that the date range available in this table is 1/1/2010-1/13/2010, so you will not see results for dates outside of that range.
 
 ### Preview
 ![](/Preview.png)
