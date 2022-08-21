@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="static/js/data.js" defer></script>
-    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer></script>    
-    <script type="text/javascript" src="static/js/app.js" defer></script>
-
     <title>UFO Finder: The Truth is Out There</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -63,6 +59,22 @@
                                 <input type="text" placeholder="1/10/2010" id="datetime"/></p>
                             </li>
                             <li class="list-group-item bg-dark">
+                                <p><label for="city">Enter City: </label><br>
+                                <input type="text" placeholder="fresno" id="city"/></p>
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <p><label for="state">Enter State:</label><br>
+                                <input type="text" placeholder="ca" id="state"/></p>
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <p><label for="country">Enter Country:</label><br>
+                                <input type="text" placeholder="us" id="country"/></p>
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <p><label for="shape">Enter Shape:</label><br>
+                                <input type="text" placeholder="circle" id="shape"/></p>
+                            </li>
+                            <li class="list-group-item bg-dark">
                                 <button id="filter-btn" type="button" class="btn btn-default"> Filter Table</button>
 
                             </li>
@@ -97,5 +109,8 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="static/js/data.js" defer></script>
+<script type="text/javascript" src="https://d3js.org/d3.v5.min.js" defer></script>    
+<script type="text/javascript" src="static/js/app.js" defer></script>
 
 </html>

@@ -1,5 +1,7 @@
 // import the data from data.js
 const UFO = data
+var searchFilter = {}
+
 
 // define the function to build the table with provided data
 function buildTable(tableData) {
@@ -16,14 +18,38 @@ function buildTable(tableData) {
     });
 }
 
-function handleClick() {
+function filterTable() {
     let filteredData = UFO;
-    let date = d3.select("#datetime").property("value");
+
+    // loop through all of the filters and keep any data that matches the filters
+    Object.entries(searchFilter).forEach(function([key, value]){
+        filteredData = filteredData.filter((row) => row[key] === value);
+
+    });  
+
+    // build the table from the filtered Data
+    buildTable(filteredData);
     
-    if(date) { filteredData = filteredData.filter(row => row.datetime === date) }
-    buildTable(filteredData)
 
 }
 
-d3.select("#filter-btn").on("click", handleClick)
+
+
+function updateFilters() {
+    const categories = ["#datetime", "#city", "#state", "#country", "#shape"]
+    for (i=0; i<categories.length; i++) {
+        let changeElement = d3.selectAll(categories[i]);
+        let elementValue = changeElement.property("value");
+        let elementID = changeElement.property("id");
+        
+        if(elementValue !== "") { searchFilter[elementID] = elementValue }
+        else {delete searchFilter[elementID]}
+      
+    }
+    
+    filterTable()
+}
+
+
+d3.select("#filter-btn").on("click", updateFilters)
 buildTable(UFO);
