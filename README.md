@@ -16,7 +16,7 @@ This project is less about analysis and more about visualizing the information o
 ### Preview
 ![](/Preview.png)
 
-##Future improvments:
+## Future improvments:
 - count of search results.
 - change the way search happens:
     - current search: you type in what you are looking for and recieve exact matches only.
