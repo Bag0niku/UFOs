@@ -29,8 +29,6 @@ function filterTable() {
 
     // build the table from the filtered Data
     buildTable(filteredData);
-    
-
 }
 
 
